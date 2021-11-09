@@ -1,0 +1,52 @@
+{% block mainbody %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- site metas -->
+   <title>Results</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="{% static 'aboutus/bootstrap.min.css' %}">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="../../static/css/zhh3.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="{% static 'aboutus/responsive.css' %} ">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="{% static 'aboutus/jquery.mCustomScrollbar.min.css' %} ">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="{% static 'aboutus/font-awesome.css' %} ">
+   <!-- owl stylesheets -->
+   <link rel="stylesheet" href="{% static 'aboutus/owl.carousel.min.css' %} ">
+   <link rel="stylesheet" href="{% static 'aboutus/owl.theme.default.min.css' %} ">
+   <link rel="stylesheet" href="{% static 'aboutus/jquery.fancybox.min.css' %} " media="screen">
+   <link rel="stylesheet" href="{% static 'aboutus/gijgo.min.css' %} "  type="text/css" />
+</head>
+
+<body background="../../static/images/movie.jpg">
+
+<body>
+
+<h1><a style="font_size: 160px; text-align: center">{{ question.question_text}}</a></h1>
+
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li><a style="font_size: 80px; text-align: center">{{ choice.choice_text }} ------ {{ choice.votes }} vote{{ choice.votes|pluralize }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'detail' question.id %}">Vote again?</a>
+
+</body>
+</html>
+{% endblock %}

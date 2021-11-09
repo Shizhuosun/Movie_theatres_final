@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>logindex</title>
+</head>
+<body>
+
+<h1 style=" text-align:center;">  {{ request.session.user_name }}! Welcome back!</h1>
+
+<h1 style=" text-align:center;"><a href={% url 'aboutus' %}>Got it!</a></h1>
+
+<h1 style=" text-align:center;"><a href="/logout/">logout</a></h1>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+{% block mainbody %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>movielist</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="{% static 'aboutus/bootstrap.min.css' %}">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="../../static/css/zhh3.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="{% static 'aboutus/responsive.css' %} ">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="{% static 'aboutus/jquery.mCustomScrollbar.min.css' %} ">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="{% static 'aboutus/font-awesome.css' %} ">
+   <!-- owl stylesheets -->
+   <link rel="stylesheet" href="{% static 'aboutus/owl.carousel.min.css' %} ">
+   <link rel="stylesheet" href="{% static 'aboutus/owl.theme.default.min.css' %} ">
+   <link rel="stylesheet" href="{% static 'aboutus/jquery.fancybox.min.css' %} " media="screen">
+   <link rel="stylesheet" href="{% static 'aboutus/gijgo.min.css' %} "  type="text/css" />
+</head>
+<body background="../../static/images/movie.jpg" x="0" y="0" width="2880" height="1620" filter="url(#blurMe)" style="background-color:#FAFAD2;" >
+
+<form action="/about-us/search" >
+       <p class="there_text">Input & Search:</p>
+       {% csrf_token %}
+       <div style="width:100%; height:40px; background:00ff00ff; text-align:center">
+
+       <input type="text"
+              style="width:50%;height:40px;background:#ffffff;font-size: 20px"
+              name="search"
+              placeholder="Search Movies or Actors"
+
+              size="156"
+              required >
+       <input style="width:6%;height:40px;background:#13447C;color:#ffffff;font-size: 20px"  type="submit" value="Submit" align="center"/><br />
+
+</form>
+
+<html class="movies_section layout_padding">
+   <div class="container">
+      {% if movies_list %}
+      <div class="movies_section">
+         <div class="movies_main">
+            <div class="movies_main">
+               <div class="iamge_movies_main">
+                  {% for movie in movies_list %}
+                  <div class="iamge_movies">
+                     <div class="image_3">
+                           <p class="code_text">{{movie.name}}</p>
+                           <img src={{movie.image_url}} class="image" style="width:100%">
+                           <div class="middle">
+                              <div class="playnow_bt"><a href={{ movie.image_url }}>Book Now</div>
+                           </div>
+                           <p class="code_text">{{movie.grade}} / {{movie.duration}}mins</p>
+
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+       {% else %}
+
+       <p style="font-size: 40px; text-align: center; color: #ffffff;padding-top: 80px">Please enter the correct movie name and search!</p>
+
+</div>
+
+
+{% endif %}
+{% endblock %}
+
+
+

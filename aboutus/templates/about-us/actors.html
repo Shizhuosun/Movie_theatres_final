@@ -1,0 +1,66 @@
+{% block mainbody %}
+{% load static %}
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- site metas -->
+   <title>Actors</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="{% static 'aboutus/bootstrap.min.css' %}">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="../../static/css/zhh3.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="{% static 'aboutus/responsive.css' %} ">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="{% static 'aboutus/jquery.mCustomScrollbar.min.css' %} ">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="{% static 'aboutus/font-awesome.css' %} ">
+   <!-- owl stylesheets -->
+   <link rel="stylesheet" href="{% static 'aboutus/owl.carousel.min.css' %} ">
+   <link rel="stylesheet" href="{% static 'aboutus/owl.theme.default.min.css' %} ">
+   <link rel="stylesheet" href="{% static 'aboutus/jquery.fancybox.min.css' %} " media="screen">
+   <link rel="stylesheet" href="{% static 'aboutus/gijgo.min.css' %} "  type="text/css" />
+</head>
+
+<body background="../../static/images/movie.jpg" x="0" y="0" width="2880" height="1620" filter="url(#blurMe)"  >
+
+<div class="movies_section layout_padding">
+   <div class="container">
+      {% if actors_list %}
+      <div class="movies_section">
+         <p class="there_text" >Viewing Actors</p>
+         <div class="movies_main">
+            <div class="movies_main">
+               <div class="iamge_movies_main">
+                  {% for actor in actors_list %}
+                  <div class="iamge_movies">
+                     <div class="image_3">
+                           <img src={{actor.image}} class="image" style="width:100%">
+                           <div class="middle">
+                              <div class="playnow_bt"><a href={{ actor.image_url }}>View Now</div>
+                           </div>
+                     </div>
+                     <p class="code_text">{{actor.name}}</p>
+                     <p class="star_icon_1">{{actor.gender}}</p>
+                     <p class="star_icon_2">Representatives: {{actor.representative}}</p>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,81 @@
+.zhh{
+    width: 100%;
+    float: left;
+    /*background-color: #0d95e8;*/
+    background: url("../images/movie.jpg");
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.layout_padding {
+    padding-top: 90px;
+    padding-bottom: 0px;
+}
+
+.iamge_movies_main {
+    width: 100%;
+    display: flex;
+}
+.iamge_movies {
+    width: 100%;
+    float: left;
+    margin: 0px 13px;
+}
+
+.image_3 {
+    position: relative;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.code_text {
+    width: 100%;
+    float: left;
+    font-size: 24px;
+    color: #ececec;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.there_text {
+    width: 100%;
+    float: left;
+    font-size: 15px;
+    color: #ececec;
+    text-align: center;
+    margin: 0px;
+}
+.star_icon {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.playnow_bt {
+    background-color: #0d95e8;
+    color: #ececec;
+    font-size: 16px;
+    padding: 7px 0px;
+    width: 110px;
+    border-radius: 30px;
+}
+
+.banner_text {
+    width: 100%;
+    float: left;
+    font-size: 25px;
+    color: #ececec;
+    text-align: center;
+    margin: 0px;
+
+}
